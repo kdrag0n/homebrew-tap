@@ -2,8 +2,8 @@ class Plush < Formula
   desc "Soft comfy bash-compatible shell"
   homepage "https://github.com/kdrag0n/plush"
   version "0.1.0"
-  revision 1
   license "MIT"
+  revision 2
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/kdrag0n/plush/releases/download/prerelease-main/plush-macos-aarch64",
