@@ -3,7 +3,7 @@ class Plush < Formula
   homepage "https://github.com/kdrag0n/plush"
   version "0.1.0"
   license "MIT"
-  revision 2
+  revision 3
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/kdrag0n/plush/releases/download/prerelease-main/plush-macos-aarch64",
