@@ -1,0 +1,39 @@
+name: update plush
+
+on:
+  repository_dispatch:
+    types:
+      - plush-prerelease
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Plush release tag to package
+        default: prerelease-main
+        required: true
+      revision:
+        description: Homebrew revision number
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: plush-formula
+  cancel-in-progress: true
+
+jobs:
+  update:
+    name: update formula
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@v4
+
+      - name: Update formula
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PLUSH_REPOSITORY: ${{ github.event.client_payload.repository || 'kdrag0n/plush' }}
+          RELEASE_TAG: ${{ github.event.client_payload.release_tag || inputs.release_tag }}
+          PLUSH_VERSION: ${{ github.event.client_payload.version || '0.1.0' }}
+          HOMEBREW_REVISION: ${{ github.event.client_payload.revision || inputs.revision }}
+        run: .github/scripts/update-plush-formula.sh
