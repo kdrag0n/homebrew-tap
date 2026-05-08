@@ -2,7 +2,7 @@ class Hush < Formula
   desc "Modern fuss-free SSH over QUIC"
   homepage "https://github.com/kdrag0n/hush"
   version "0.1.0"
-  revision 16
+  revision 17
   license "MIT"
 
   if OS.mac? && Hardware::CPU.arm?
@@ -33,17 +33,17 @@ class Hush < Formula
     resource "hush-server" do
       url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-server-linux-aarch64-musl",
           using: :nounzip
-      sha256 "0e52eb415b706529aa7a73b8d29fcdebd411f4da139c9b0cfbd8460d216e7be2"
+      sha256 "da5f51286390fba03e3c9fa98b06863d1660edb8185c2ac7c890c51b770ceb55"
     end
   elsif OS.linux? && Hardware::CPU.intel?
     url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-linux-x86_64-musl",
         using: :nounzip
-    sha256 "37debaa579a34b71bb5360ea4d6d8e253a04b2cf229cf05713e3a057942fd819"
+    sha256 "7c5fe46120c7ed80529e285ff401038cbaa5be2599b3ed17b8a46de783dcd7f1"
 
     resource "hush-server" do
       url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-server-linux-x86_64-musl",
           using: :nounzip
-      sha256 "f53405b96606acf4dd824de4bee939889faece4b537956a92c5e80e3f2e18de2"
+      sha256 "bb648ab50dd4f26c42d761868b058c3ae941ce1431ae9013c4ce463766d4d31c"
     end
   else
     odie "hush prebuilt binaries are not available for this platform"
