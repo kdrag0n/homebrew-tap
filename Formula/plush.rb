@@ -3,24 +3,24 @@ class Plush < Formula
   homepage "https://github.com/kdrag0n/plush"
   version "0.1.0"
   license "MIT"
-  revision 3
+  revision 5
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/kdrag0n/plush/releases/download/prerelease-main/plush-macos-aarch64",
         using: :nounzip
-    sha256 "638e3e8b23d655ab9e40c4a4bfbc12674b1f6f93fb3912787e9a8fe23117a988"
+    sha256 "52f406f2be0efa85740dce281cf4ead6ac50aca7f79f7079cadf0a3bea38d618"
   elsif OS.mac? && Hardware::CPU.intel?
     url "https://github.com/kdrag0n/plush/releases/download/prerelease-main/plush-macos-x86_64",
         using: :nounzip
-    sha256 "496ec645aa4816cba4bacb21dee4f1619861b0d3d8d0983acac66c976d5a9dc7"
+    sha256 "34051015685bfce4fc90b323faa8de264056548e27414add5319e60777739a13"
   elsif OS.linux? && Hardware::CPU.arm?
     url "https://github.com/kdrag0n/plush/releases/download/prerelease-main/plush-linux-aarch64-musl",
         using: :nounzip
-    sha256 "5664436f6259f02330a7525d1054cc7b09b5e765b186a321bf9f455fac4e5e36"
+    sha256 "8dd539365bc0378f91b2f32b520eabfea19d18849d0ef2f0ce075bd43c871a1a"
   elsif OS.linux? && Hardware::CPU.intel?
     url "https://github.com/kdrag0n/plush/releases/download/prerelease-main/plush-linux-x86_64-musl",
         using: :nounzip
-    sha256 "02748348ca7f6121f759e9c0b3b0ae34a36991a17f4fb5f5b5bc625eaad40932"
+    sha256 "c61d3c7f498e3df87abaac51d19e9beec3ddb6f7acf3be59d23969c98616484b"
   else
     odie "plush prebuilt binaries are not available for this platform"
   end
