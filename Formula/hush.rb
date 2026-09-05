@@ -2,7 +2,7 @@ class Hush < Formula
   desc "Modern fuss-free SSH over QUIC"
   homepage "https://github.com/kdrag0n/hush"
   version "0.1.0"
-  revision 33
+  revision 34
   license "MIT"
 
   if OS.mac? && Hardware::CPU.arm?
