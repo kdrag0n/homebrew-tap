@@ -2,48 +2,48 @@ class Hush < Formula
   desc "Modern fuss-free SSH over QUIC"
   homepage "https://github.com/kdrag0n/hush"
   version "0.1.0"
-  revision 42
+  revision 43
   license "MIT"
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-macos-aarch64",
         using: :nounzip
-    sha256 "512421dc1eff7a5a5613a6d94e4bae0ce89ae01589177b245ea6cfa27dd50d2b"
+    sha256 "625504e6bdaaf55df6b4d6ab19c90fa99f4ecea1174624cda622416d668fafce"
 
     resource "hush-server" do
       url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-server-macos-aarch64",
           using: :nounzip
-      sha256 "c379a4e38a21ca5f99c65d923a526699e4cb9b0b2cd9771077ba8c973d2ee727"
+      sha256 "ac9ae043b080c7d6c1771ba7fa9a10a7017102cd70f55be25c6150a741e0be06"
     end
   elsif OS.mac? && Hardware::CPU.intel?
     url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-macos-x86_64",
         using: :nounzip
-    sha256 "54d2872bb63aba3bd4199f32bc21ada2e17f10514720d87c3192472f44c764b8"
+    sha256 "2ab891fa9a98555254fdb3cd089fde416b52a95460ecff1b26e6ad4cf275242c"
 
     resource "hush-server" do
       url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-server-macos-x86_64",
           using: :nounzip
-      sha256 "e9eb1d184c607147bfef0ffd951b8beedcbac4239a7d724f5578e4330842b123"
+      sha256 "2dde5a9d574dac73c10765209cdddd731354b3f85e2bc64cc8077a8a04fef9f7"
     end
   elsif OS.linux? && Hardware::CPU.arm?
     url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-linux-aarch64-musl",
         using: :nounzip
-    sha256 "9330887d7187a6c0b2331722ab64aa8238129d6d8082ac7b9fbef800f22f7306"
+    sha256 "9d2f0f4213037e4c38739a616dc3c2787dc6c1234a436c5d350a225270f43a9b"
 
     resource "hush-server" do
       url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-server-linux-aarch64-musl",
           using: :nounzip
-      sha256 "decdf242769024552710194a02150798250ff52b8957f076f49b4b58b7a23d68"
+      sha256 "e2b09d3591e85497b1604cd8fb009b7e21a8ee2d6a3f70ca6d5703a3df1e70c4"
     end
   elsif OS.linux? && Hardware::CPU.intel?
     url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-linux-x86_64-musl",
         using: :nounzip
-    sha256 "b6afa72fc1ebfc954a7c06584e4c04bd9edc2e7c347a8be988a28d5e4c451d64"
+    sha256 "63239366b9ee53fa849940650718be297c72e30a79bec8d6dff5dff35fed828a"
 
     resource "hush-server" do
       url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-server-linux-x86_64-musl",
           using: :nounzip
-      sha256 "b7a9ab28038723a2c8e82a7b2677200fbf6783a2fef279a53e531682ab4c25d1"
+      sha256 "d79c980da5067e05a2763aeb96b60a067a341b39bf022f45cca9d6770b71a004"
     end
   else
     odie "hush prebuilt binaries are not available for this platform"
