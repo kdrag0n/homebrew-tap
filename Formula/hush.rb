@@ -2,13 +2,13 @@ class Hush < Formula
   desc "Modern fuss-free SSH over QUIC"
   homepage "https://github.com/kdrag0n/hush"
   version "0.1.0"
-  revision 41
+  revision 42
   license "MIT"
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-macos-aarch64",
         using: :nounzip
-    sha256 "f8f1d9f56b24613cd8edafe538155eb1a8ae5f62a429fc1cd1a7e922861713e2"
+    sha256 "512421dc1eff7a5a5613a6d94e4bae0ce89ae01589177b245ea6cfa27dd50d2b"
 
     resource "hush-server" do
       url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-server-macos-aarch64",
@@ -18,7 +18,7 @@ class Hush < Formula
   elsif OS.mac? && Hardware::CPU.intel?
     url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-macos-x86_64",
         using: :nounzip
-    sha256 "cf83ffe97f7c1c62bf9aa3f6f6db6262f46f659fdd799c7972a4dcb3aedfde5d"
+    sha256 "54d2872bb63aba3bd4199f32bc21ada2e17f10514720d87c3192472f44c764b8"
 
     resource "hush-server" do
       url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-server-macos-x86_64",
@@ -28,7 +28,7 @@ class Hush < Formula
   elsif OS.linux? && Hardware::CPU.arm?
     url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-linux-aarch64-musl",
         using: :nounzip
-    sha256 "7c48f4af9902f516802f1f353cdba92dbe2dbec8acd561c2da72a1dee6e72e01"
+    sha256 "9330887d7187a6c0b2331722ab64aa8238129d6d8082ac7b9fbef800f22f7306"
 
     resource "hush-server" do
       url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-server-linux-aarch64-musl",
@@ -38,7 +38,7 @@ class Hush < Formula
   elsif OS.linux? && Hardware::CPU.intel?
     url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-linux-x86_64-musl",
         using: :nounzip
-    sha256 "d45a9d50af0b11bc1cade756f0722bd20639ed9d1f750abd465efdbc5b3d56dc"
+    sha256 "b6afa72fc1ebfc954a7c06584e4c04bd9edc2e7c347a8be988a28d5e4c451d64"
 
     resource "hush-server" do
       url "https://github.com/kdrag0n/hush/releases/download/prerelease-main/hush-server-linux-x86_64-musl",
